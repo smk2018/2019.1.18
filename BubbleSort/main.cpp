@@ -4,7 +4,7 @@
 //
 //  Created by mingkunshi on 3/7/20.
 //  Copyright © 2020 mingkunshi. All rights reserved.
-//
+//  Improved version of bubble code
 
 #include <iostream>
 using namespace std;
@@ -15,12 +15,19 @@ void swap(int *xp, int *yp) {
     *yp = tmp;
 }
 void bubblesort(int arr[], int n) {
+    bool flag;
     int i,j;
     for (i = 0; i < n; i++) {
+        flag = false;
         for (j = 0; j < n - i -1 ; j++) {
             if(arr[j] > arr[j+1]) {
                 swap(&arr[i], &arr[j+1]);
+                flag = true;
             }
+        }
+        
+        if(flag == false){
+            break;
         }
     }
 }
